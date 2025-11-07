@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Drawing App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Users Online</h2>
+            <div id="users-list"></div>
+            
+            <div class="tools">
+                <h3>Tools</h3>
+                <button id="brush">Brush</button>
+                <button id="eraser">Eraser</button>
+                <button id="clear">Clear Canvas</button>
+                <button id="undo">Undo</button>
+                <button id="redo">Redo</button>
+                
+                <div class="color-picker">
+                    <label for="color">Color:</label>
+                    <input type="color" id="color" value="#000000">
+                </div>
+                
+                <div class="brush-size">
+                    <label for="brushSize">Brush Size: <span id="brushSizeValue">5</span></label>
+                    <input type="range" id="brushSize" min="1" max="50" value="5">
+                </div>
+            </div>
+        </div>
+        
+        <div class="canvas-container">
+            <canvas id="drawing-canvas"></canvas>
+        </div>
+    </div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
